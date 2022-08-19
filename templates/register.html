@@ -1,0 +1,117 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: rgb(61, 58, 58);
+}
+.container {
+    padding: 50px;
+  background-color: rgb(83, 84, 85);
+}
+
+input[type=text], input[type=password], textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  color: rgb(122, 122, 86);
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: orange;
+  outline: none;
+}
+ div {
+            padding: 10px 0;
+         }
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.registerbtn {
+  background-color: #81bb9b;
+  color: white;
+  padding: 16px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.registerbtn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<form action="register" method="post">
+    {% csrf_token %}
+
+  <div class="container">
+  <center>  <h1 style="color: #c2ddc3; font-family: 'comic sans ms';" > REGISTER </h1> </center>
+  <hr>
+  <label><p style="color: #e4c2e1;">Firstname</p></label>
+<input type="text" name="firstname" placeholder= "Firstname" size="15" required />
+<label><p style="color: #cfbfbe;">Lastname</p></label>
+<input type="text" name="lastname" placeholder="Lastname" size="15"required />
+<div>  <label><p style="color: #cfbfbe;">Username</p></label>
+<input type="text" name="username" placeholder="username" size="15" required />
+
+
+
+
+</div>
+
+
+ <label for="email"><p style="color: #cfbfbe;">Email</p></label>
+ <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><p style="color: #cfbfbe;">Password</p></label>
+    <input type="password" placeholder="Enter Password" name="password1" required>
+
+    <label for="psw-repeat"><p style="color: #cfbfbe;">Re-type Password</p></label>
+    <input type="password" placeholder="Retype Password" name="password2" required>
+    <center><button type="submit" class="registerbtn" style="font-family: 'comic sans ms'; color: #f1f509; ">Register</button></center>
+</form>
+<div>
+  {% for message in messages %}
+  <h4>{{message}}</h4>
+  {% endfor %}
+</div>
+
+</body>
+</html>
+
+ 
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<form action="register" method="post">
+    {% csrf_token %}
+  <input type="text" name="username" placeholder="username"><br><br>
+  <input type="text" name="firstname" placeholder="firstname"><br><br>
+  <input type="text" name="lastname" placeholder="lastname"><br><br>
+  <input type="email" name="email" placeholder="email"><br><br>
+    <input type="password" name="password1" placeholder="password"><br><br>
+    <input type="password" name="password2" placeholder="confirm password"><br><br>
+    <input type="submit" value="registration">
+</form>
+<div>
+    {% for message in messages %}
+    <h4>{{message}}</h4>
+    {% endfor %}
+</div>
+</body>
+</html> -->
