@@ -1,1 +1,0 @@
-web gunicorn avodhashop.wsgi:application --log-file -
